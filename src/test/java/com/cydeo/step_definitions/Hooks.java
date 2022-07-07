@@ -6,6 +6,8 @@ import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeStep;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 /*
 In this class we will be able to pass pre- and post-conditions to each  scenario and each step
@@ -32,6 +34,8 @@ public class Hooks {
     }
     @After
     public void teardownScenario(){
+        byte[] screenshot=((TakesScreenshot)Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+
 
         Driver.closeDriver();
 
