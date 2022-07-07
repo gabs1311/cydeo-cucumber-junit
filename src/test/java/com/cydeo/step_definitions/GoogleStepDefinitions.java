@@ -27,7 +27,7 @@ public class GoogleStepDefinitions {
 
 
         //Junit assertion accepts first arg as expected, second arg as actual
-        Assert.assertEquals(expectedTitle,actualTitle);
+        Assert.assertEquals( expectedTitle,actualTitle);
        // Assert.assertTrue(actualTitle.equals(expectedTitle));
 
     }
