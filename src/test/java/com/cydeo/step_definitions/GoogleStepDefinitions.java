@@ -31,7 +31,7 @@ public class GoogleStepDefinitions {
     @Then("user sees {string} in the google title")
     public void user_sees_in_the_google_title(String string) {
 
-        String expectedTitle = string+" - Google Search";
+        String expectedTitle = string+ " - Căutare Google";
         String actualTitle = Driver.getDriver().getTitle();
 
         //Junit assertion accepts first arg as expected, second arg as actual
@@ -42,15 +42,15 @@ public class GoogleStepDefinitions {
     @Then("user sees apple in the google title")
     public void user_sees_apple_in_the_google_title() {
 
-        String expectedTitle = "apple - Google Search";
+        String expectedTitle = "apple - Căutare Google";
         String actualTitle = Driver.getDriver().getTitle();
 
         //Junit assertion accepts first arg as expected, second arg as actual
         Assert.assertEquals("Title is not as expected!",expectedTitle, actualTitle);
 
         //Assert.assertTrue(actualTitle.equals(expectedTitle));
-    }
 
+    }
 
 
     @When("user is on Google search page")
