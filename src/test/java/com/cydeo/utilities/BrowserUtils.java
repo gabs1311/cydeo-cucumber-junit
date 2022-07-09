@@ -59,6 +59,15 @@ public class BrowserUtils {
 
     }
 
+
+    /**
+     * This method will accept a String as expected value and verify actual URL CONTAINS the value
+     * @param expectedInUrl
+     */
+    public static void verifyTitleContains(String expectedInUrl){
+    Assert.assertEquals(Driver.getDriver().getTitle(),expectedInUrl);
+    }
+
     /*
     Creating a utility method for ExplicitWait, so we don't have to repeat the lines
      */
