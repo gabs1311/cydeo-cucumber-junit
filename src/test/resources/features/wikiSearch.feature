@@ -2,7 +2,7 @@
   Feature: Wikipedia search functionality and verification
 
   #WSF(wikipedia search functionality) 45234
-
+    @wip
     Scenario: Wikipedia Search Functionality Title Verification
 
    Given User is on Wikipedia home page
