@@ -1,5 +1,6 @@
 package com.cydeo.pages;
 
+import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,6 +32,29 @@ public class WebTableLoginPage {
         this.inputUsername.sendKeys("Test");
         this.inputPassword.sendKeys("Tester");
         this.loginButton.click();
+    }
+
+    /**
+     *
+     * This methid will accept 2 arguments & login
+     * @param username
+     * @param password
+     */
+
+    public void login(String username, String password){
+
+    inputUsername.sendKeys(username);
+    inputPassword.sendKeys(password);
+    loginButton.click();
+    }
+    /**
+     * This method will log in using credentials from configuration.properties
+     */
+
+    public void loginWithConfig(){
+        inputUsername.sendKeys(ConfigurationReader.getProperty("web.table.username"));
+        inputPassword.sendKeys(ConfigurationReader.getProperty("web.tables.pw"));
+        loginButton.click();
     }
 
 }
