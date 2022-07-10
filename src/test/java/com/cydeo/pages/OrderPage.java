@@ -33,6 +33,11 @@ public class OrderPage extends BasePage {
     @FindBy(name="zip")
     public WebElement inputZip;
 
+    @FindBy(name="card")
+    public WebElement cardType;
+
+
+
 
 
 
