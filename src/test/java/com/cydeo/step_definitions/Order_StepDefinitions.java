@@ -88,6 +88,11 @@ public class Order_StepDefinitions {
     public void user_selects_credit_card_type(String expectedCardType) {
         List<WebElement> cardTypes = orderPage.cardType;
 
+        for (WebElement each : cardTypes) {
+            if (each.getAttribute("value").equals(expectedCardType)){
+                each.click();
+            }
+        }
     }
     @When("user enters credit card number {string}")
     public void user_enters_credit_card_number(String cardType) {
