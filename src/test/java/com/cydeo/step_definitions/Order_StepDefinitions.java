@@ -89,7 +89,7 @@ public class Order_StepDefinitions {
         List<WebElement> cardTypes = orderPage.cardType;
 
         for (WebElement each : cardTypes) {
-            if (each.getAttribute("value").equals(expectedCardType)){
+            if (each.getAttribute("value").equalsIgnoreCase(expectedCardType)){
                 each.click();
             }
         }
