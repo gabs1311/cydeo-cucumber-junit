@@ -5,9 +5,11 @@ import com.cydeo.pages.OrderPage;
 import com.cydeo.pages.WebTableLoginPage;
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 
 public class Order_StepDefinitions {
@@ -31,10 +33,32 @@ public class Order_StepDefinitions {
     Select select = new Select(orderPage.productDropdown);
     select.selectByVisibleText(string);
     }
-    @When("user enters quantity {int}")
-    public void user_enters_quantity(Integer int1) {
+   // @When("user enters quantity {int}")
+ //   public void user_enters_quantity(Integer int1) {
+//
+  //  }
 
+    @And("user enters quantity {int}")
+    public void userEntersQuantity(int arg0) {
+        // accepting int argument and sending it using sendKeys() method
+        // since sendKeys() method only accepts String, we need to either concat with ""
+        //or send String.valueOf(int). that is on line 56 right now
+      //  orderPage.inputQuantity.sendKeys(arg0+"");
+
+
+
+        // clear() method will delete whatever is in the input box
+
+        orderPage.inputQuantity.clear();
+        // the other way we can delete whatever it was in the input box is: Keys.BACk_SPACE. What
+        // is does is to imitate pressing back_space button from the keyboard to delete existing input.
+        // This method is a little more accurate than the clear method(), that sometimes does not work
+
+        orderPage.inputQuantity.sendKeys(Keys.BACK_SPACE);
+        orderPage.inputQuantity.sendKeys(String.valueOf(arg0));
     }
+
+
     @When("user enters customer name {string}")
     public void user_enters_customer_name(String string) {
 
@@ -73,5 +97,7 @@ public class Order_StepDefinitions {
     public void user_should_see_in_first_row_of_the_web_table(String string) {
 
     }
+
+
 
 }
