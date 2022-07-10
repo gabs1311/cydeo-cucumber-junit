@@ -19,6 +19,8 @@ Feature: User should be able to login using correct credentials
     When user enters below credentials
       | username     | Test   |
       | password     | Tester |
-    Then user should see url contains orders      # implement this new step
+    Then user should see url contains orders
+
+        # implement this new step
       # create login method in WebTableLoginPage
       # this login method should have multiple different overloaded version
